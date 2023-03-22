@@ -1,0 +1,1 @@
+# Exploation_of_Artificial_Intelligence_Based_calnformation_science.Incheon_Science_High_school
