@@ -1,18 +1,24 @@
 # week06_function.py
 # decorator
+
+def time_checker(func):
+    def immer(*args):
+        s= time.time()
+        r = func(*args)
+        e= time.time()
+        print(f'총 수행시간은 {e - s}초 입니다')
+
 def factorial(n):
     """
     factorial function
     :param n: more than zero
     :return: n!
     """
-    s= time.time()
     result=1
     for k in range(1, n+1):
         result = result * k
-    e = time.time()
-    print(f'총 수행시간은 {e-s}초 입니다')
     return result
+
 def power(b, e):
     """
     power fuction
@@ -25,5 +31,7 @@ def power(b, e):
         result = result * b
     return result
 
-print(power(2, 10))
-print(factorial(1000))
+dp = time_checker(power)
+print(dp(2, 10))
+df = time_checker(factorial)
+print(df(1000))
